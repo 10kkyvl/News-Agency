@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ newspaper.title }} - NewsPortal{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-10">
+    <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+        <div class="text-sm text-green-400 uppercase font-semibold mb-3">
+            {{ newspaper.topic.name }}
+        </div>
+        <h1 class="text-4xl font-bold text-white mb-4">{{ newspaper.title }}</h1>
+
+        <div class="flex items-center text-gray-400 text-sm mb-6">
+            <span class="mr-6">By {% for editor in newspaper.publishers.all %}
+                <span class="font-semibold">{{ editor.first_name }} {{ editor.last_name }}</span>
+                {% if not forloop.last %}, {% endif %}
+            {% endfor %}</span>
+            <span>{{ newspaper.published_date|date:"F d, Y" }}</span>
+        </div>
+
+        <div class="text-gray-300 text-lg leading-relaxed mb-6" style="word-wrap: break-word; overflow-wrap: break-word;">
+            <p>{{ newspaper.content|linebreaksbr }}</p>
+        </div>
+
+        <div class="flex justify-between items-center">
+            <a href="{% url 'agency:index' %}" class="inline-flex items-center text-blue-400 hover:text-blue-600">
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

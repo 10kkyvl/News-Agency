@@ -172,15 +172,16 @@
       "publishers": [1, 2]
     }
   },
-  {
-    "model": "agency.newspaper",
-    "pk": 13,
-    "fields": {
-      "title": "The Future of Work Post-Pandemic",
-      "content": "Remote work and hybrid models are becoming the norm...",
-      "published_date": "2025-02-13T09:00:00Z",
-      "topic": 1,
-      "publishers": [2]
-    }
+{
+  "model": "agency.newspaper",
+  "pk": 13,
+  "fields": {
+    "title": "The Future of Work Post-Pandemic",
+    "content": "The global workforce has undergone an unprecedented transformation in recent years, with the COVID-19 pandemic serving as the catalyst for a shift that is likely to reverberate for decades to come. Remote work and hybrid models, once seen as temporary adjustments, have now become permanent fixtures in many industries. Companies have adapted to this new reality, and employees have embraced the flexibility that remote work offers. But what does this mean for the future of work? As organizations continue to balance the benefits of remote work with the need for in-person collaboration, new trends are emerging that will shape the workplace of tomorrow. The demand for digital tools and platforms has skyrocketed, as companies invest in technology to support remote teams and maintain productivity. At the same time, the need for strong organizational culture and employee well-being has become more evident. As remote work becomes the norm, organizations must find innovative ways to foster collaboration, communication, and community. This includes redefining the role of the office, with many businesses opting for flexible workspaces that can accommodate both remote and in-office employees. The future of work will be characterized by greater flexibility, innovation, and a renewed focus on employee satisfaction and mental health. Companies that can successfully navigate this evolving landscape will emerge stronger, more agile, and better equipped to thrive in the post-pandemic world. Remote work and hybrid models are here to stay, but the next challenge will be finding the right balance between flexibility and connection. The workplace of the future will not be defined by physical office spaces, but by the ability to work seamlessly from anywhere, at any time, with the right tools and support in place. As we look to the future, one thing is clear: the way we work will never be the same again.",
+    "published_date": "2025-02-13T09:00:00Z",
+    "topic": 1,
+    "publishers": [2]
   }
+}
+
 ]

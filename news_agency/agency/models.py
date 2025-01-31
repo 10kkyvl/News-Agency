@@ -23,5 +23,8 @@ class Newspaper(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.DO_NOTHING, related_name="articles")
     publishers = models.ManyToManyField(Redactor, related_name="published_articles")
 
+    class Meta:
+        ordering = ['-published_date']
+
     def __str__(self):
         return self.title

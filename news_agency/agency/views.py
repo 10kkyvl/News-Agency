@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from agency.models import Newspaper
 
@@ -18,3 +18,8 @@ class IndexView(ListView):
         context["topics"] = Topic.objects.all()
 
         return context
+
+class NewsPaperDetailView(DetailView):
+    model = Newspaper
+    template_name = "agency/newspaper_detail.html"
+    context_object_name = "newspaper"
