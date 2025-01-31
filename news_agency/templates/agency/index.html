@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}NewsPortal - Latest News{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6">
+    <div class="bg-gray-800 rounded-lg shadow-sm p-4">
+        <h3 class="text-lg font-semibold mb-4 text-white">Filter by Topic</h3>
+        <div class="flex flex-wrap gap-2">
+          {% for topic in topics %}
+            <a href="#" class="px-4 py-2 rounded hover:bg-opacity-80 transition-colors bg-green-900 text-green-400">
+              {{ topic.name }}
+            </a>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+
+<main class="container mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for newspaper in newspapers %}
+
+        <div class="bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-200">
+            <div class="text-xs text-green-400 uppercase font-semibold mb-2">
+              {{ newspaper.topic.name }}
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">{{ newspaper.title }}</h3>
+            <div class="flex items-center text-gray-400 text-sm mb-3">
+                <span class="mr-4">By {{ newspaper.publishers.all|join:", " }}</span>
+                <span>{{ newspaper.published_date }}</span>
+            </div>
+            <p class="text-gray-300 mb-4">{{ newspaper.content|truncatewords:15 }}</p>
+            <a href="#" class="text-blue-400 hover:text-blue-600 inline-flex items-center">
+                Read more
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+      {% endfor %}
+    </div>
+</main>
+{% endblock %}
