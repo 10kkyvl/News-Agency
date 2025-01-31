@@ -7,6 +7,7 @@ from agency.models import Topic
 
 
 class IndexView(ListView):
+    paginate_by = 5
     model = Newspaper
     template_name = "agency/index.html"
     context_object_name = "newspapers"
