@@ -1,0 +1,186 @@
+[
+  {
+    "model": "agency.redactor",
+    "pk": 1,
+    "fields": {
+      "username": "editor1",
+      "first_name": "John",
+      "last_name": "Doe",
+      "years_of_experience": 5
+    }
+  },
+  {
+    "model": "agency.redactor",
+    "pk": 2,
+    "fields": {
+      "username": "editor2",
+      "first_name": "Alice",
+      "last_name": "Smith",
+      "years_of_experience": 8
+    }
+  },
+  {
+    "model": "agency.topic",
+    "pk": 1,
+    "fields": {
+      "name": "Technology"
+    }
+  },
+  {
+    "model": "agency.topic",
+    "pk": 2,
+    "fields": {
+      "name": "Politics"
+    }
+  },
+  {
+    "model": "agency.topic",
+    "pk": 3,
+    "fields": {
+      "name": "Science"
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 1,
+    "fields": {
+      "title": "The Future of AI",
+      "content": "AI is rapidly evolving...",
+      "published_date": "2025-02-01T10:00:00Z",
+      "topic": 1,
+      "publishers": [1]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 2,
+    "fields": {
+      "title": "Political Turmoil in 2025",
+      "content": "The world is experiencing major political changes...",
+      "published_date": "2025-02-02T12:30:00Z",
+      "topic": 2,
+      "publishers": [2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 3,
+    "fields": {
+      "title": "Breakthrough in Quantum Computing",
+      "content": "Quantum computers are now capable of...",
+      "published_date": "2025-02-03T08:15:00Z",
+      "topic": 3,
+      "publishers": [1, 2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 4,
+    "fields": {
+      "title": "New Advances in Renewable Energy",
+      "content": "Solar and wind energy are becoming more efficient...",
+      "published_date": "2025-02-04T09:45:00Z",
+      "topic": 3,
+      "publishers": [1]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 5,
+    "fields": {
+      "title": "The Rise of Electric Vehicles",
+      "content": "EVs are taking over the automobile industry...",
+      "published_date": "2025-02-05T11:20:00Z",
+      "topic": 1,
+      "publishers": [2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 6,
+    "fields": {
+      "title": "New Space Exploration Plans",
+      "content": "NASA and private companies plan missions to Mars...",
+      "published_date": "2025-02-06T14:00:00Z",
+      "topic": 3,
+      "publishers": [1, 2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 7,
+    "fields": {
+      "title": "Cybersecurity Threats in 2025",
+      "content": "Hackers are finding new ways to attack systems...",
+      "published_date": "2025-02-07T16:10:00Z",
+      "topic": 1,
+      "publishers": [2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 8,
+    "fields": {
+      "title": "Global Economic Changes",
+      "content": "The financial markets are shifting rapidly...",
+      "published_date": "2025-02-08T18:30:00Z",
+      "topic": 2,
+      "publishers": [1]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 9,
+    "fields": {
+      "title": "5G Networks Expanding Worldwide",
+      "content": "High-speed internet is reaching more areas...",
+      "published_date": "2025-02-09T20:45:00Z",
+      "topic": 1,
+      "publishers": [1, 2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 10,
+    "fields": {
+      "title": "The Role of AI in Healthcare",
+      "content": "AI is being used to diagnose diseases...",
+      "published_date": "2025-02-10T22:00:00Z",
+      "topic": 3,
+      "publishers": [2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 11,
+    "fields": {
+      "title": "Climate Change and Its Effects",
+      "content": "Rising temperatures are affecting ecosystems...",
+      "published_date": "2025-02-11T23:15:00Z",
+      "topic": 3,
+      "publishers": [1]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 12,
+    "fields": {
+      "title": "Political Shifts in Europe",
+      "content": "Governments are changing policies rapidly...",
+      "published_date": "2025-02-12T07:30:00Z",
+      "topic": 2,
+      "publishers": [1, 2]
+    }
+  },
+  {
+    "model": "agency.newspaper",
+    "pk": 13,
+    "fields": {
+      "title": "The Future of Work Post-Pandemic",
+      "content": "Remote work and hybrid models are becoming the norm...",
+      "published_date": "2025-02-13T09:00:00Z",
+      "topic": 1,
+      "publishers": [2]
+    }
+  }
+]
