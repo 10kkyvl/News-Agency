@@ -4,8 +4,9 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic.base import RedirectView
+from django.views.generic.edit import DeleteView, UpdateView
 
-from agency.forms import CustomUserCreationForm
+from agency.forms import CustomUserCreationForm, TopicForm
 from agency.models import Newspaper
 
 from agency.models import Topic
@@ -29,6 +30,25 @@ class NewsPaperDetailView(DetailView):
     model = Newspaper
     template_name = "agency/newspaper_detail.html"
     context_object_name = "newspaper"
+
+
+class CreateTopicView(LoginRequiredMixin, CreateView):
+    model = Topic
+    form_class = TopicForm
+    template_name = "agency/forms/topic_form.html"
+    success_url = reverse_lazy("agency:newspaper-list")
+
+
+class UpdateTopicView(LoginRequiredMixin, UpdateView):
+    model = Topic
+    form_class = TopicForm
+    template_name = "agency/forms/topic_form.html"
+    success_url = reverse_lazy("agency:newspaper-list")
+
+
+class DeleteTopicView(LoginRequiredMixin, DeleteView):
+    model = Topic
+    success_url = reverse_lazy("agency:newspaper-list")
 
 
 class CustomLoginView(LoginView):

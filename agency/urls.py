@@ -5,7 +5,10 @@ from agency.views import (
     NewsPaperDetailView,
     CustomLoginView,
     SignUpView,
-    CustomLogoutView
+    CustomLogoutView,
+    CreateTopicView,
+    UpdateTopicView,
+    DeleteTopicView,
 )
 
 
@@ -14,6 +17,17 @@ urlpatterns = [
     path(
         "newspaper/<int:pk>", NewsPaperDetailView.as_view(),
         name="newspaper-detail"
+    ),
+    path("topic-create", CreateTopicView.as_view(), name="topic-create"),
+    path(
+        "topic-update/<int:pk>",
+        UpdateTopicView.as_view(),
+        name="topic-update"
+    ),
+    path(
+        "topic-delete/<int:pk>",
+        DeleteTopicView.as_view(),
+        name="topic-delete"
     ),
     path("login/", CustomLoginView.as_view(), name="login"),
     path("signup/", SignUpView.as_view(), name="signup"),

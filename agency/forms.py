@@ -1,6 +1,7 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from agency.models import Redactor
+from agency.models import Redactor, Topic
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -28,3 +29,9 @@ class CustomUserCreationForm(UserCreationForm):
                 'Username must contain only Latin characters'
             )
         return cleaned_data
+
+
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = "__all__"
