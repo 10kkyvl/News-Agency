@@ -11,7 +11,10 @@ from agency.views import (
 
 urlpatterns = [
     path("", NewsPaperListView.as_view(), name="newspaper-list"),
-    path("newspaper/<int:pk>", NewsPaperDetailView.as_view(), name="newspaper-detail"),
+    path(
+        "newspaper/<int:pk>", NewsPaperDetailView.as_view(),
+        name="newspaper-detail"
+    ),
     path("login/", CustomLoginView.as_view(), name="login"),
     path("signup/", SignUpView.as_view(), name="signup"),
     path("logout/", CustomLogoutView.as_view(), name="logout"),

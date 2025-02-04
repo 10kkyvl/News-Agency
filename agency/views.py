@@ -1,5 +1,4 @@
 from django.contrib.auth import logout
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
@@ -24,6 +23,7 @@ class NewsPaperListView(ListView):
         context["topics"] = Topic.objects.all()
 
         return context
+
 
 class NewsPaperDetailView(DetailView):
     model = Newspaper
