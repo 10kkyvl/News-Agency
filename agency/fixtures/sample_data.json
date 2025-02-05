@@ -1,210 +1,560 @@
-[
-    {
-        "model": "agency.Redactor",
-        "pk": 1,
-        "fields": {
-            "username": "john_editor",
-            "first_name": "John",
-            "last_name": "Smith",
-            "email": "john.smith@newsagency.com",
-            "years_of_experience": 15,
-            "password": "pbkdf2_sha256$260000$randomhashhere",
-            "is_active": true
-        }
-    },
-    {
-        "model": "agency.Redactor",
-        "pk": 2,
-        "fields": {
-            "username": "emily_reporter",
-            "first_name": "Emily",
-            "last_name": "Johnson",
-            "email": "emily.johnson@newsagency.com",
-            "years_of_experience": 7,
-            "password": "pbkdf2_sha256$260000$randomhashhere",
-            "is_active": true
-        }
-    },
-    {
-        "model": "agency.Redactor",
-        "pk": 3,
-        "fields": {
-            "username": "michael_senior",
-            "first_name": "Michael",
-            "last_name": "Williams",
-            "email": "michael.williams@newsagency.com",
-            "years_of_experience": 25,
-            "password": "pbkdf2_sha256$260000$randomhashhere",
-            "is_active": true,
-            "is_staff": true
-        }
-    },
-    {
-        "model": "agency.Topic",
-        "pk": 1,
-        "fields": {
-            "name": "Technology"
-        }
-    },
-    {
-        "model": "agency.Topic",
-        "pk": 2,
-        "fields": {
-            "name": "Politics"
-        }
-    },
-    {
-        "model": "agency.Topic",
-        "pk": 3,
-        "fields": {
-            "name": "Sports"
-        }
-    },
-    {
-        "model": "agency.Topic",
-        "pk": 4,
-        "fields": {
-            "name": "Entertainment"
-        }
-    },
-    {
-        "model": "agency.Topic",
-        "pk": 5,
-        "fields": {
-            "name": "Science"
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 1,
-        "fields": {
-            "title": "The AI Revolution: Transforming Our World",
-            "content": "Artificial Intelligence is rapidly changing every aspect of our lives, from healthcare to transportation. This comprehensive report delves deep into the latest technological breakthroughs, exploring how AI is reshaping industries, creating new job markets, and challenging our understanding of intelligence. We examine cutting-edge research from leading tech companies and universities, interviewing experts who are at the forefront of this technological transformation.\n\nKey topics include machine learning algorithms, neural networks, ethical considerations of AI development, and potential future scenarios. Our investigative team has uncovered exclusive insights into how major corporations are investing billions in AI research and development, and what this means for the global economy.\n\nFrom self-driving cars to advanced medical diagnostics, AI is no longer a distant future – it's happening now. This article provides a nuanced look at the challenges and opportunities presented by this revolutionary technology.",
-            "published_date": "2024-02-01T10:00:00Z",
-            "topic": [1, 5],
-            "publishers": [1, 2]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 2,
-        "fields": {
-            "title": "Global Political Landscape: Tensions and Diplomacy",
-            "content": "The international political arena continues to be a complex and volatile environment. Our in-depth analysis examines the current geopolitical tensions between major world powers, exploring the intricate diplomatic negotiations and strategic maneuvers that shape global politics.\n\nWe provide comprehensive coverage of recent international conflicts, trade negotiations, and diplomatic initiatives. Our team of expert journalists has conducted exclusive interviews with political analysts, diplomats, and policy makers to bring you the most up-to-date and nuanced understanding of current global political dynamics.\n\nKey focus areas include tensions in various global regions, emerging diplomatic strategies, and the potential long-term implications of current political developments. From economic sanctions to international cooperation efforts, this article offers a detailed examination of the forces shaping our global political landscape.",
-            "published_date": "2024-02-05T14:30:00Z",
-            "topic": [2],
-            "publishers": [2, 3]
-        }
-    },
-        {
-        "model": "agency.Newspaper",
-        "pk": 3,
-        "fields": {
-            "title": "Sports Revolution: Technology Transforms Athletic Performance",
-            "content": "In the modern era of professional sports, technology has become an unprecedented game-changer, fundamentally altering how athletes train, compete, and recover. This comprehensive investigation explores the cutting-edge technological innovations that are redefining athletic performance across multiple disciplines.\n\nFrom advanced biomechanical analysis using high-speed cameras and motion tracking sensors to artificial intelligence-powered training programs, athletes are now equipped with tools that were unimaginable just a decade ago. Our reporting delves into how professional teams and individual athletes are leveraging these technologies to gain competitive edges.\n\nSpecialized wearable devices now track everything from heart rate and muscle oxygen levels to precise movement patterns, allowing coaches and sports scientists to make data-driven decisions about training, injury prevention, and performance optimization. We interview leading sports technology experts, professional coaches, and elite athletes who are at the forefront of this technological revolution.",
-            "published_date": "2024-02-10T09:15:00Z",
-            "topic": [3, 1],
-            "publishers": [1, 3]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 4,
-        "fields": {
-            "title": "Climate Crisis: Urgent Global Challenges and Innovative Solutions",
-            "content": "The global climate crisis has reached a critical juncture, demanding immediate and comprehensive action from governments, corporations, and individuals worldwide. Our investigative report provides an in-depth analysis of the current environmental challenges, breakthrough technological solutions, and the complex geopolitical landscape surrounding climate change.\n\nDrawing from extensive research and interviews with leading climate scientists, environmental policy experts, and innovative green technology developers, we explore the multifaceted approach required to address the escalating environmental challenges. The report covers emerging renewable energy technologies, carbon capture innovations, sustainable urban planning strategies, and grassroots environmental movements.\n\nKey sections include detailed examinations of solar and wind energy advancements, breakthrough battery storage technologies, sustainable agriculture techniques, and the economic implications of transitioning to a green economy. We also critically analyze the current international climate agreements and the challenges in implementing meaningful global environmental policies.",
-            "published_date": "2024-02-15T11:45:00Z",
-            "topic": [5, 2],
-            "publishers": [2, 3]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 5,
-        "fields": {
-            "title": "The Future of Entertainment: Streaming, AI, and Interactive Media",
-            "content": "Entertainment is undergoing a radical transformation, driven by technological innovations that are reshaping how content is created, distributed, and consumed. Our comprehensive analysis explores the intricate ecosystem of modern entertainment, from streaming platforms and artificial intelligence-driven content recommendations to immersive virtual and augmented reality experiences.\n\nWe dive deep into how major entertainment companies are leveraging advanced algorithms to personalize content, how artificial intelligence is being used to generate and enhance creative works, and the emerging trends in interactive and participatory media. Exclusive interviews with technology executives, entertainment industry leaders, and innovative content creators provide unique insights into this rapidly evolving landscape.\n\nThe report examines the impact of these technological shifts on traditional media industries, the changing consumer expectations, and the potential future of entertainment. From AI-generated music and films to fully immersive virtual reality experiences, we explore how technology is blurring the lines between creator and consumer.",
-            "published_date": "2024-02-20T13:20:00Z",
-            "topic": [4, 1],
-            "publishers": [1, 2]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 6,
-        "fields": {
-            "title": "Quantum Computing: The Next Technological Frontier",
-            "content": "Quantum computing represents a paradigm shift in computational technology, promising to solve complex problems that are currently intractable for classical computers. Our in-depth report provides a comprehensive exploration of this groundbreaking field, offering insights into the scientific principles, technological challenges, and potential world-changing applications of quantum computing.\n\nThrough exclusive interviews with leading quantum physicists, computer scientists, and researchers from top technological institutions, we unravel the complex world of quantum mechanics and its computational applications. The report covers the fundamental differences between classical and quantum computing, current research challenges, and the potential implications for fields such as cryptography, medical research, climate modeling, and artificial intelligence.\n\nWe examine the significant investments being made by major tech companies and governments, the current state of quantum computing technology, and the potential economic and scientific transformations that may result from these advances. The article provides a balanced and accessible overview of this complex and exciting technological frontier.",
-            "published_date": "2024-02-25T10:30:00Z",
-            "topic": [1, 5],
-            "publishers": [3, 1]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 7,
-        "fields": {
-            "title": "Global Economic Shifts: Emerging Markets and Digital Transformation",
-            "content": "The global economic landscape is experiencing unprecedented transformation, driven by technological innovation, geopolitical changes, and the ongoing digital revolution. Our comprehensive economic analysis provides an in-depth exploration of the current economic trends, emerging market dynamics, and the profound impact of digital technologies on global economic structures.\n\nDrawing from extensive economic research, our report examines the shifting balance of economic power, the rise of digital economies, and the complex interactions between traditional and emerging economic models. We provide detailed analysis of how countries are adapting to the digital age, the challenges and opportunities presented by technological disruption, and the potential long-term economic implications.\n\nKey sections include an examination of cryptocurrency and blockchain technologies, the impact of artificial intelligence on labor markets, emerging economic models in developing countries, and the transformation of global trade and financial systems. Exclusive interviews with economic experts, technology innovators, and policy makers offer unique insights into these complex economic dynamics.",
-            "published_date": "2024-03-01T14:45:00Z",
-            "topic": [2, 1],
-            "publishers": [2, 3]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 8,
-        "fields": {
-            "title": "Space Exploration: The New Frontier of Human Achievement",
-            "content": "Space exploration is experiencing a renaissance, driven by a combination of governmental space programs and private sector innovation. Our comprehensive report provides an in-depth look at the current state of space exploration, technological advancements, and the ambitious plans for future missions and potential human colonization.\n\nWe explore the latest developments in rocket technology, satellite systems, interplanetary exploration, and the emerging commercial space industry. Exclusive interviews with astronauts, aerospace engineers, and space policy experts offer unparalleled insights into the challenges and opportunities of space exploration.\n\nThe report covers recent missions to Mars, plans for lunar base establishments, the potential for asteroid mining, and the long-term vision of making humanity a multi-planetary species. We examine the technological innovations that are making these ambitious goals possible, from advanced propulsion systems to sustainable life support technologies.",
-            "published_date": "2024-03-05T11:15:00Z",
-            "topic": [5, 1],
-            "publishers": [1, 3]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 9,
-        "fields": {
-            "title": "Biotechnology and Medicine: Revolutionizing Human Health",
-            "content": "The field of biotechnology is rapidly transforming modern medicine, offering unprecedented possibilities for disease prevention, treatment, and human health optimization. Our comprehensive investigation provides an in-depth exploration of the cutting-edge biotechnological innovations that are reshaping our understanding of human health and medical treatment.\n\nDrawing from extensive research and interviews with leading medical researchers, geneticists, and biotechnology experts, we explore breakthrough technologies such as CRISPR gene editing, personalized medicine, advanced immunotherapies, and artificial intelligence-driven medical diagnostics. The report offers a nuanced look at the ethical, scientific, and practical implications of these transformative technologies.\n\nKey sections include detailed examinations of genetic engineering techniques, the potential for treating previously incurable diseases, the role of artificial intelligence in medical research and diagnosis, and the emerging field of regenerative medicine. We provide a balanced perspective on the immense potential and complex ethical considerations of these rapidly advancing biotechnological capabilities.",
-            "published_date": "2024-03-10T13:30:00Z",
-            "topic": [5, 1],
-            "publishers": [2, 1]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 10,
-        "fields": {
-            "title": "Urban Innovation: Smart Cities and Sustainable Urban Development",
-            "content": "Cities are undergoing a radical transformation, driven by technological innovation, sustainability challenges, and changing urban demographics. Our comprehensive report provides an in-depth exploration of the emerging concept of 'smart cities' and the innovative approaches to urban development that are reshaping how we live, work, and interact in urban environments.\n\nWe examine the integration of advanced technologies such as Internet of Things (IoT) devices, artificial intelligence, renewable energy systems, and data-driven urban planning. Exclusive interviews with urban planners, technology experts, and city administrators offer unique insights into the challenges and opportunities of creating more efficient, sustainable, and livable urban spaces.\n\nKey sections include analyses of intelligent transportation systems, sustainable infrastructure technologies, urban energy solutions, and the social and economic implications of these technological transformations. The report provides a holistic view of how cities are evolving to address 21st-century challenges of sustainability, efficiency, and quality of life.",
-            "published_date": "2024-03-15T10:00:00Z",
-            "topic": [1, 2],
-            "publishers": [3, 2]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 11,
-        "fields": {
-            "title": "Cybersecurity in the Digital Age: Challenges and Innovations",
-            "content": "In an increasingly interconnected world, cybersecurity has become a critical concern for governments, corporations, and individuals alike. Our comprehensive investigation provides an in-depth exploration of the complex landscape of digital security, emerging threats, and innovative technological solutions.\n\nDrawing from extensive research and interviews with leading cybersecurity experts, we examine the evolving nature of cyber threats, from state-sponsored cyber warfare to sophisticated criminal networks. The report covers advanced technological approaches to digital security, including artificial intelligence-driven threat detection, quantum encryption technologies, and innovative defensive strategies.\n\nKey sections include detailed analyses of recent major cyber attacks, emerging cybersecurity technologies, the geopolitical implications of digital security, and the ongoing cat-and-mouse game between cybersecurity professionals and malicious actors. We provide a nuanced perspective on the challenges and opportunities in protecting digital infrastructure in an increasingly complex technological landscape.",
-            "published_date": "2024-03-20T14:15:00Z",
-            "topic": [1, 2],
-            "publishers": [1, 3]
-        }
-    },
-    {
-        "model": "agency.Newspaper",
-        "pk": 12,
-        "fields": {
-            "title": "The Future of Work: Automation, AI, and the Changing Labor Landscape",
-            "content": "The nature of work is undergoing a fundamental transformation, driven by technological innovations in automation, artificial intelligence, and digital technologies. Our comprehensive report provides an in-depth exploration of how these technological shifts are reshaping labor markets, employment strategies, and the very concept of work itself.\n\nDrawing from extensive research and interviews with economists, technology experts, and labor market analysts, we examine the profound implications of increasing automation and AI integration across various industries. The report covers the potential job displacement, emerging new job categories, required skill adaptations, and the broader societal implications of these technological changes.\n\nKey sections include analyses of automation trends in different sectors, the potential for universal basic income, the rise of gig and remote work economies, and strategies for workforce adaptation. We provide a balanced and forward-looking perspective on navigating the complex challenges and opportunities presented by the technological transformation of work.",
-            "published_date": "2024-03-25T11:45:00Z",
-            "topic": [1, 2],
-            "publishers": [2, 1]
-        }
+[{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
     }
-
-]
+}, {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add topic",
+        "content_type": 6,
+        "codename": "add_topic"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change topic",
+        "content_type": 6,
+        "codename": "change_topic"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete topic",
+        "content_type": 6,
+        "codename": "delete_topic"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view topic",
+        "content_type": 6,
+        "codename": "view_topic"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 7,
+        "codename": "add_redactor"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 7,
+        "codename": "change_redactor"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 7,
+        "codename": "delete_redactor"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 7,
+        "codename": "view_redactor"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add newspaper",
+        "content_type": 8,
+        "codename": "add_newspaper"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change newspaper",
+        "content_type": 8,
+        "codename": "change_newspaper"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete newspaper",
+        "content_type": 8,
+        "codename": "delete_newspaper"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view newspaper",
+        "content_type": 8,
+        "codename": "view_newspaper"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "agency",
+        "model": "topic"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "agency",
+        "model": "redactor"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "agency",
+        "model": "newspaper"
+    }
+}, {
+    "model": "sessions.session",
+    "pk": "1acfv1lns4cwc0cvbjb9hch4ij71hh7u",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSFQkIdL9_0GMsyMUjWQlHZl_HfbpAvd3nPOfYsE61LS2nlOE4mLsOL0u2XAJ9cd0APqvUlsdZmnLHdFHrTLsRG_rof7d1Cgl602SNllpQejnCM9MMeoSFNkyJZvhhDPJqBViFkzOvBBBctb5o1XOojPF_qyOFI:1tfgzY:YlzSejqi8c21pciv0BgDgdrxl0qfb1mPBh6AHsdT2_s",
+        "expire_date": "2025-02-19T15:07:04.180Z"
+    }
+}, {
+    "model": "agency.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$Y4WTS27jNickV6hVOBTp8M$UQfH7pcTIfJaZqnmRKLus772uknUOlyW4hmf71RieMM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "john_editor",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "john.smith@newsagency.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-05T15:05:33.825Z",
+        "years_of_experience": 15,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "agency.redactor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$Y4WTS27jNickV6hVOBTp8M$UQfH7pcTIfJaZqnmRKLus772uknUOlyW4hmf71RieMM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emily_reporter",
+        "first_name": "Emily",
+        "last_name": "Johnson",
+        "email": "emily.johnson@newsagency.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-05T15:05:33.827Z",
+        "years_of_experience": 7,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "agency.redactor",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$Y4WTS27jNickV6hVOBTp8M$UQfH7pcTIfJaZqnmRKLus772uknUOlyW4hmf71RieMM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "michael_senior",
+        "first_name": "Michael",
+        "last_name": "Williams",
+        "email": "michael.williams@newsagency.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-02-05T15:05:33.828Z",
+        "years_of_experience": 25,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "agency.redactor",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$3zeUg8qRy5GiWyzWjlQQEH$Re6OM0EiZv1rNdoXNJ3hRrrA7W6Hb0UU0soOhoTqd/w=",
+        "last_login": "2025-02-05T15:07:04.046Z",
+        "is_superuser": false,
+        "username": "10kk",
+        "first_name": "Hello",
+        "last_name": "World",
+        "email": "10kk@news.ua",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-05T15:06:56.575Z",
+        "years_of_experience": 6,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "agency.redactor",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$IavzuqMWjJFhcKpq49Z1AF$D6/ITg8iXtoPH9ApLjg8eZxv7plH8IAeDM9hcv+mbFQ=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-02-05T15:09:19.444Z",
+        "years_of_experience": 0,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "agency.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Technology"
+    }
+}, {
+    "model": "agency.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Politics"
+    }
+}, {
+    "model": "agency.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Sports"
+    }
+}, {
+    "model": "agency.topic",
+    "pk": 4,
+    "fields": {
+        "name": "Entertainment"
+    }
+}, {
+    "model": "agency.topic",
+    "pk": 5,
+    "fields": {
+        "name": "Science"
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 1,
+    "fields": {
+        "title": "The AI Revolution: Transforming Our World",
+        "content": "Artificial Intelligence is rapidly changing every aspect of our lives, from healthcare to transportation. This comprehensive report delves deep into the latest technological breakthroughs, exploring how AI is reshaping industries, creating new job markets, and challenging our understanding of intelligence. We examine cutting-edge research from leading tech companies and universities, interviewing experts who are at the forefront of this technological transformation.\n\nKey topics include machine learning algorithms, neural networks, ethical considerations of AI development, and potential future scenarios. Our investigative team has uncovered exclusive insights into how major corporations are investing billions in AI research and development, and what this means for the global economy.\n\nFrom self-driving cars to advanced medical diagnostics, AI is no longer a distant future Ц it's happening now. This article provides a nuanced look at the challenges and opportunities presented by this revolutionary technology.",
+        "published_date": "2024-02-01T10:00:00Z",
+        "topic": [1, 5],
+        "publishers": [1, 2]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 2,
+    "fields": {
+        "title": "Global Political Landscape: Tensions and Diplomacy",
+        "content": "The international political arena continues to be a complex and volatile environment. Our in-depth analysis examines the current geopolitical tensions between major world powers, exploring the intricate diplomatic negotiations and strategic maneuvers that shape global politics.\n\nWe provide comprehensive coverage of recent international conflicts, trade negotiations, and diplomatic initiatives. Our team of expert journalists has conducted exclusive interviews with political analysts, diplomats, and policy makers to bring you the most up-to-date and nuanced understanding of current global political dynamics.\n\nKey focus areas include tensions in various global regions, emerging diplomatic strategies, and the potential long-term implications of current political developments. From economic sanctions to international cooperation efforts, this article offers a detailed examination of the forces shaping our global political landscape.",
+        "published_date": "2024-02-05T14:30:00Z",
+        "topic": [2],
+        "publishers": [2, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 3,
+    "fields": {
+        "title": "Sports Revolution: Technology Transforms Athletic Performance",
+        "content": "In the modern era of professional sports, technology has become an unprecedented game-changer, fundamentally altering how athletes train, compete, and recover. This comprehensive investigation explores the cutting-edge technological innovations that are redefining athletic performance across multiple disciplines.\n\nFrom advanced biomechanical analysis using high-speed cameras and motion tracking sensors to artificial intelligence-powered training programs, athletes are now equipped with tools that were unimaginable just a decade ago. Our reporting delves into how professional teams and individual athletes are leveraging these technologies to gain competitive edges.\n\nSpecialized wearable devices now track everything from heart rate and muscle oxygen levels to precise movement patterns, allowing coaches and sports scientists to make data-driven decisions about training, injury prevention, and performance optimization. We interview leading sports technology experts, professional coaches, and elite athletes who are at the forefront of this technological revolution.",
+        "published_date": "2024-02-10T09:15:00Z",
+        "topic": [1, 3],
+        "publishers": [1, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 4,
+    "fields": {
+        "title": "Climate Crisis: Urgent Global Challenges and Innovative Solutions",
+        "content": "The global climate crisis has reached a critical juncture, demanding immediate and comprehensive action from governments, corporations, and individuals worldwide. Our investigative report provides an in-depth analysis of the current environmental challenges, breakthrough technological solutions, and the complex geopolitical landscape surrounding climate change.\n\nDrawing from extensive research and interviews with leading climate scientists, environmental policy experts, and innovative green technology developers, we explore the multifaceted approach required to address the escalating environmental challenges. The report covers emerging renewable energy technologies, carbon capture innovations, sustainable urban planning strategies, and grassroots environmental movements.\n\nKey sections include detailed examinations of solar and wind energy advancements, breakthrough battery storage technologies, sustainable agriculture techniques, and the economic implications of transitioning to a green economy. We also critically analyze the current international climate agreements and the challenges in implementing meaningful global environmental policies.",
+        "published_date": "2024-02-15T11:45:00Z",
+        "topic": [2, 5],
+        "publishers": [2, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 5,
+    "fields": {
+        "title": "The Future of Entertainment: Streaming, AI, and Interactive Media",
+        "content": "Entertainment is undergoing a radical transformation, driven by technological innovations that are reshaping how content is created, distributed, and consumed. Our comprehensive analysis explores the intricate ecosystem of modern entertainment, from streaming platforms and artificial intelligence-driven content recommendations to immersive virtual and augmented reality experiences.\n\nWe dive deep into how major entertainment companies are leveraging advanced algorithms to personalize content, how artificial intelligence is being used to generate and enhance creative works, and the emerging trends in interactive and participatory media. Exclusive interviews with technology executives, entertainment industry leaders, and innovative content creators provide unique insights into this rapidly evolving landscape.\n\nThe report examines the impact of these technological shifts on traditional media industries, the changing consumer expectations, and the potential future of entertainment. From AI-generated music and films to fully immersive virtual reality experiences, we explore how technology is blurring the lines between creator and consumer.",
+        "published_date": "2024-02-20T13:20:00Z",
+        "topic": [1, 4],
+        "publishers": [1, 2]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 6,
+    "fields": {
+        "title": "Quantum Computing: The Next Technological Frontier",
+        "content": "Quantum computing represents a paradigm shift in computational technology, promising to solve complex problems that are currently intractable for classical computers. Our in-depth report provides a comprehensive exploration of this groundbreaking field, offering insights into the scientific principles, technological challenges, and potential world-changing applications of quantum computing.\n\nThrough exclusive interviews with leading quantum physicists, computer scientists, and researchers from top technological institutions, we unravel the complex world of quantum mechanics and its computational applications. The report covers the fundamental differences between classical and quantum computing, current research challenges, and the potential implications for fields such as cryptography, medical research, climate modeling, and artificial intelligence.\n\nWe examine the significant investments being made by major tech companies and governments, the current state of quantum computing technology, and the potential economic and scientific transformations that may result from these advances. The article provides a balanced and accessible overview of this complex and exciting technological frontier.",
+        "published_date": "2024-02-25T10:30:00Z",
+        "topic": [1, 5],
+        "publishers": [1, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 7,
+    "fields": {
+        "title": "Global Economic Shifts: Emerging Markets and Digital Transformation",
+        "content": "The global economic landscape is experiencing unprecedented transformation, driven by technological innovation, geopolitical changes, and the ongoing digital revolution. Our comprehensive economic analysis provides an in-depth exploration of the current economic trends, emerging market dynamics, and the profound impact of digital technologies on global economic structures.\n\nDrawing from extensive economic research, our report examines the shifting balance of economic power, the rise of digital economies, and the complex interactions between traditional and emerging economic models. We provide detailed analysis of how countries are adapting to the digital age, the challenges and opportunities presented by technological disruption, and the potential long-term economic implications.\n\nKey sections include an examination of cryptocurrency and blockchain technologies, the impact of artificial intelligence on labor markets, emerging economic models in developing countries, and the transformation of global trade and financial systems. Exclusive interviews with economic experts, technology innovators, and policy makers offer unique insights into these complex economic dynamics.",
+        "published_date": "2024-03-01T14:45:00Z",
+        "topic": [1, 2],
+        "publishers": [2, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 8,
+    "fields": {
+        "title": "Space Exploration: The New Frontier of Human Achievement",
+        "content": "Space exploration is experiencing a renaissance, driven by a combination of governmental space programs and private sector innovation. Our comprehensive report provides an in-depth look at the current state of space exploration, technological advancements, and the ambitious plans for future missions and potential human colonization.\n\nWe explore the latest developments in rocket technology, satellite systems, interplanetary exploration, and the emerging commercial space industry. Exclusive interviews with astronauts, aerospace engineers, and space policy experts offer unparalleled insights into the challenges and opportunities of space exploration.\n\nThe report covers recent missions to Mars, plans for lunar base establishments, the potential for asteroid mining, and the long-term vision of making humanity a multi-planetary species. We examine the technological innovations that are making these ambitious goals possible, from advanced propulsion systems to sustainable life support technologies.",
+        "published_date": "2024-03-05T11:15:00Z",
+        "topic": [1, 5],
+        "publishers": [1, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 9,
+    "fields": {
+        "title": "Biotechnology and Medicine: Revolutionizing Human Health",
+        "content": "The field of biotechnology is rapidly transforming modern medicine, offering unprecedented possibilities for disease prevention, treatment, and human health optimization. Our comprehensive investigation provides an in-depth exploration of the cutting-edge biotechnological innovations that are reshaping our understanding of human health and medical treatment.\n\nDrawing from extensive research and interviews with leading medical researchers, geneticists, and biotechnology experts, we explore breakthrough technologies such as CRISPR gene editing, personalized medicine, advanced immunotherapies, and artificial intelligence-driven medical diagnostics. The report offers a nuanced look at the ethical, scientific, and practical implications of these transformative technologies.\n\nKey sections include detailed examinations of genetic engineering techniques, the potential for treating previously incurable diseases, the role of artificial intelligence in medical research and diagnosis, and the emerging field of regenerative medicine. We provide a balanced perspective on the immense potential and complex ethical considerations of these rapidly advancing biotechnological capabilities.",
+        "published_date": "2024-03-10T13:30:00Z",
+        "topic": [1, 5],
+        "publishers": [1, 2]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 10,
+    "fields": {
+        "title": "Urban Innovation: Smart Cities and Sustainable Urban Development",
+        "content": "Cities are undergoing a radical transformation, driven by technological innovation, sustainability challenges, and changing urban demographics. Our comprehensive report provides an in-depth exploration of the emerging concept of 'smart cities' and the innovative approaches to urban development that are reshaping how we live, work, and interact in urban environments.\n\nWe examine the integration of advanced technologies such as Internet of Things (IoT) devices, artificial intelligence, renewable energy systems, and data-driven urban planning. Exclusive interviews with urban planners, technology experts, and city administrators offer unique insights into the challenges and opportunities of creating more efficient, sustainable, and livable urban spaces.\n\nKey sections include analyses of intelligent transportation systems, sustainable infrastructure technologies, urban energy solutions, and the social and economic implications of these technological transformations. The report provides a holistic view of how cities are evolving to address 21st-century challenges of sustainability, efficiency, and quality of life.",
+        "published_date": "2024-03-15T10:00:00Z",
+        "topic": [1, 2],
+        "publishers": [2, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 11,
+    "fields": {
+        "title": "Cybersecurity in the Digital Age: Challenges and Innovations",
+        "content": "In an increasingly interconnected world, cybersecurity has become a critical concern for governments, corporations, and individuals alike. Our comprehensive investigation provides an in-depth exploration of the complex landscape of digital security, emerging threats, and innovative technological solutions.\n\nDrawing from extensive research and interviews with leading cybersecurity experts, we examine the evolving nature of cyber threats, from state-sponsored cyber warfare to sophisticated criminal networks. The report covers advanced technological approaches to digital security, including artificial intelligence-driven threat detection, quantum encryption technologies, and innovative defensive strategies.\n\nKey sections include detailed analyses of recent major cyber attacks, emerging cybersecurity technologies, the geopolitical implications of digital security, and the ongoing cat-and-mouse game between cybersecurity professionals and malicious actors. We provide a nuanced perspective on the challenges and opportunities in protecting digital infrastructure in an increasingly complex technological landscape.",
+        "published_date": "2024-03-20T14:15:00Z",
+        "topic": [1, 2],
+        "publishers": [1, 3]
+    }
+}, {
+    "model": "agency.newspaper",
+    "pk": 12,
+    "fields": {
+        "title": "The Future of Work: Automation, AI, and the Changing Labor Landscape",
+        "content": "The nature of work is undergoing a fundamental transformation, driven by technological innovations in automation, artificial intelligence, and digital technologies. Our comprehensive report provides an in-depth exploration of how these technological shifts are reshaping labor markets, employment strategies, and the very concept of work itself.\n\nDrawing from extensive research and interviews with economists, technology experts, and labor market analysts, we examine the profound implications of increasing automation and AI integration across various industries. The report covers the potential job displacement, emerging new job categories, required skill adaptations, and the broader societal implications of these technological changes.\n\nKey sections include analyses of automation trends in different sectors, the potential for universal basic income, the rise of gig and remote work economies, and strategies for workforce adaptation. We provide a balanced and forward-looking perspective on navigating the complex challenges and opportunities presented by the technological transformation of work.",
+        "published_date": "2024-03-25T11:45:00Z",
+        "topic": [1, 2],
+        "publishers": [1, 2]
+    }
+}]
