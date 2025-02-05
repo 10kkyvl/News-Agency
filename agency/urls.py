@@ -20,32 +20,32 @@ from agency.views import (
 urlpatterns = [
     path("", NewsPaperListView.as_view(), name="newspaper-list"),
     path(
-        "newspaper/<int:pk>", NewsPaperDetailView.as_view(),
+        "newspapers/<int:pk>", NewsPaperDetailView.as_view(),
         name="newspaper-detail"
     ),
     path(
-        "newspaper-create/",
+        "newspapers-create/",
         NewsPaperCreateView.as_view(),
         name="newspaper-create"
     ),
     path(
-        "newspaper-edit/<int:pk>",
+        "newspapers-edit/<int:pk>",
         NewsPaperEditView.as_view(),
         name="newspaper-edit"
     ),
     path(
-        "newspaper-delete/<int:pk>",
+        "newspapers-delete/<int:pk>",
         NewsPaperDeleteView.as_view(),
         name="newspaper-delete"
     ),
-    path("topic-create", CreateTopicView.as_view(), name="topic-create"),
+    path("topics-create", CreateTopicView.as_view(), name="topic-create"),
     path(
-        "topic-update/<int:pk>",
+        "topics-update/<int:pk>",
         UpdateTopicView.as_view(),
         name="topic-update"
     ),
     path(
-        "topic-delete/<int:pk>",
+        "topics-delete/<int:pk>",
         DeleteTopicView.as_view(),
         name="topic-delete"
     ),
@@ -53,7 +53,7 @@ urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),
     path("logout/", CustomLogoutView.as_view(), name="logout"),
     path("editors/", EditorsList.as_view(), name="editors"),
-    path("profile/<int:pk>", ProfileView.as_view(), name="profile"),
+    path("profiles/<int:pk>", ProfileView.as_view(), name="profile"),
 ]
 
 app_name = "agency"
