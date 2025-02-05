@@ -45,7 +45,10 @@ class NewsPaperEditView(LoginRequiredMixin, UpdateView):
     template_name = "agency/forms/article_form.html"
 
     def get_success_url(self):
-        return reverse_lazy("agency:newspaper-detail", kwargs={"pk": self.object.id})
+        return reverse_lazy(
+            "agency:newspaper-detail",
+            kwargs={"pk": self.object.id}
+        )
 
 
 class NewsPaperDeleteView(LoginRequiredMixin, DeleteView):
