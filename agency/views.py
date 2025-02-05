@@ -53,8 +53,12 @@ class NewsPaperEditView(LoginRequiredMixin, UpdateView):
 
 class NewsPaperDeleteView(LoginRequiredMixin, DeleteView):
     model = Newspaper
-    success_url = reverse_lazy("agency:newspaper-list")
 
+    def get_success_url(self):
+        return reverse_lazy(
+            "agency:newspaper-detail",
+            kwargs={"pk": self.object.id}
+        )
 
 class CreateTopicView(LoginRequiredMixin, CreateView):
     model = Topic

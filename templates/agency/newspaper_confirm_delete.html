@@ -14,7 +14,7 @@
     <form method="POST" class="space-y-6">
       {% csrf_token %}
       <div class="flex space-x-4">
-        <a href="{% url 'agency:newspaper-list' %}"
+        <a href="{% url 'agency:newspaper-detail' pk=object.pk%}"
            class="w-full bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300 cursor-pointer text-center">
           Cancel
         </a>
