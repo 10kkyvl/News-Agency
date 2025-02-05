@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic.base import RedirectView
 from django.views.generic.edit import DeleteView, UpdateView
 
-from agency.forms import CustomUserCreationForm, TopicForm
+from agency.forms import CustomUserCreationForm, TopicForm, ArticleForm
 from agency.models import Newspaper, Redactor
 
 from agency.models import Topic
@@ -30,6 +30,27 @@ class NewsPaperDetailView(DetailView):
     model = Newspaper
     template_name = "agency/newspaper_detail.html"
     context_object_name = "newspaper"
+
+
+class NewsPaperCreateView(LoginRequiredMixin, CreateView):
+    model = Newspaper
+    form_class = ArticleForm
+    template_name = "agency/forms/article_form.html"
+    success_url = reverse_lazy("agency:newspaper-list")
+
+
+class NewsPaperEditView(LoginRequiredMixin, UpdateView):
+    model = Newspaper
+    form_class = ArticleForm
+    template_name = "agency/forms/article_form.html"
+
+    def get_success_url(self):
+        return reverse_lazy("agency:newspaper-detail", kwargs={"pk": self.object.id})
+
+
+class NewsPaperDeleteView(LoginRequiredMixin, DeleteView):
+    model = Newspaper
+    success_url = reverse_lazy("agency:newspaper-list")
 
 
 class CreateTopicView(LoginRequiredMixin, CreateView):
@@ -72,6 +93,12 @@ class CustomLogoutView(LoginRequiredMixin, RedirectView):
     def get(self, request, *args, **kwargs):
         logout(request)
         return super().get(request, *args, **kwargs)
+
+
+class EditorsList(ListView):
+    model = Redactor
+    template_name = "agency/redactor_list.html"
+    context_object_name = "editors"
 
 
 class ProfileView(DetailView):

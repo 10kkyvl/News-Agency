@@ -27,9 +27,8 @@ class Newspaper(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
-    topic = models.ForeignKey(
+    topic = models.ManyToManyField(
         Topic,
-        on_delete=models.DO_NOTHING,
         related_name="articles"
     )
     publishers = models.ManyToManyField(

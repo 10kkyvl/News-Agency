@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from agency.models import Redactor, Topic
+from agency.models import Redactor, Topic, Newspaper
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -35,3 +35,13 @@ class TopicForm(forms.ModelForm):
     class Meta:
         model = Topic
         fields = "__all__"
+
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Newspaper
+        fields = ["title", "topic", "content", "publishers"]
+        widgets = {
+            "topic": forms.CheckboxSelectMultiple,
+            "publishers": forms.CheckboxSelectMultiple,
+        }
