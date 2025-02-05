@@ -24,7 +24,7 @@
     {% for newspaper in editor.published_articles.all %}
       <div class="bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-200">
         <div class="text-xs text-green-400 uppercase font-semibold mb-2">
-          {{ newspaper.topic.name }}
+          {{ newspaper.topic.all|join:", " }}
         </div>
         <h3 class="text-xl font-bold mb-3 text-white">{{ newspaper.title }}</h3>
         <div class="flex items-center text-gray-400 text-sm mb-3">
