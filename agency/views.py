@@ -7,7 +7,7 @@ from django.views.generic.base import RedirectView
 from django.views.generic.edit import DeleteView, UpdateView
 
 from agency.forms import CustomUserCreationForm, TopicForm
-from agency.models import Newspaper
+from agency.models import Newspaper, Redactor
 
 from agency.models import Topic
 
@@ -72,3 +72,9 @@ class CustomLogoutView(LoginRequiredMixin, RedirectView):
     def get(self, request, *args, **kwargs):
         logout(request)
         return super().get(request, *args, **kwargs)
+
+
+class ProfileView(DetailView):
+    model = Redactor
+    context_object_name = "editor"
+    template_name = "agency/redactor_profile.html"

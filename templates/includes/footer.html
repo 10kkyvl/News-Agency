@@ -1,29 +1,27 @@
-<body>
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-4 py-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="text-xl font-bold mb-4">About Us</h4>
-                    <p class="text-gray-400">Your trusted source for the latest news and updates across various topics.</p>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-                    <ul class="text-gray-400">
-                        <li class="mb-2"><a href="{% url 'agency:newspaper-list' %}" class="hover:text-white">Home</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Contact</h4>
-                    <ul class="text-gray-400">
-                        <li class="mb-2">Email: info@newsportal.com</li>
-                        <li class="mb-2">Phone: (555) 123-4567</li>
-                        <li class="mb-2">Address: 123 News Street</li>
-                    </ul>
-                </div>
+<footer class="bg-gray-800 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-bold mb-4">About Us</h4>
+                <p class="text-gray-400">Your trusted source for the latest news and updates across various topics.</p>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; {% now "Y" %} NewsPortal. All rights reserved.</p>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                <ul class="text-gray-400">
+                    <li class="mb-2"><a href="{% url 'agency:newspaper-list' %}" class="hover:text-white">Home</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Contact</h4>
+                <ul class="text-gray-400">
+                    <li class="mb-2">Email: info@newsportal.com</li>
+                    <li class="mb-2">Phone: (555) 123-4567</li>
+                    <li class="mb-2">Address: 123 News Street</li>
+                </ul>
             </div>
         </div>
-    </footer>
-</body>
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>&copy; {% now "Y" %} NewsPortal. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

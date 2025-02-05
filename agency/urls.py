@@ -9,6 +9,7 @@ from agency.views import (
     CreateTopicView,
     UpdateTopicView,
     DeleteTopicView,
+    ProfileView
 )
 
 
@@ -32,6 +33,7 @@ urlpatterns = [
     path("login/", CustomLoginView.as_view(), name="login"),
     path("signup/", SignUpView.as_view(), name="signup"),
     path("logout/", CustomLogoutView.as_view(), name="logout"),
+    path("profile/<int:pk>", ProfileView.as_view(), name="profile"),
 ]
 
 app_name = "agency"

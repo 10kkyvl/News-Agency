@@ -7,7 +7,7 @@ from agency.models import Redactor, Topic
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = Redactor
-        fields = ('username', 'years_of_experience', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'years_of_experience', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
