@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -o errexit
 
+export DJANGO_SETTINGS_MODULE=agency.settings.production
 
 pip install -r requirements.txt
 
