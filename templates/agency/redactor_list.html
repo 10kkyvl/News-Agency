@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}NewsPortal - Editors{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-white">Our Editors</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for editor in editors %}
+            <div class="bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-200">
+                <h3 class="text-xl font-bold mb-3 text-white">
+                    <a href="{% url 'agency:profile' pk=editor.pk %}" class="hover:text-blue-400 transition-colors">
+                        {{ editor.get_full_name }}
+                    </a>
+                </h3>
+                <div class="text-gray-400 text-sm mb-3">
+                    <p>{{ editor.email }}</p>
+                    <p>Articles Published: {{ editor.num_articles }}</p>
+                </div>
+                <div class="text-xs text-green-400 uppercase font-semibold mb-2">
+                    {{ editor.role|default:"Staff Writer" }}
+                </div>
+                <a href="{% url 'agency:profile' pk=editor.pk %}"
+                   class="text-blue-400 hover:text-blue-600 inline-flex items-center">
+                    View Profile
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
