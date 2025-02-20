@@ -18,7 +18,7 @@
                 </h3>
                 <div class="text-gray-400 text-sm mb-3">
                     <p>{{ editor.email }}</p>
-                    <p>Articles Published: {{ editor.published_articles.count }}</p>
+                    <p>Articles Published: {{ editor.num_articles }}</p>
                 </div>
                 <div class="text-xs text-green-400 uppercase font-semibold mb-2">
                     {{ editor.role|default:"Staff Writer" }}

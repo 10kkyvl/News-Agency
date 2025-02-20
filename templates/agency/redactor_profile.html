@@ -28,7 +28,11 @@
         </div>
         <h3 class="text-xl font-bold mb-3 text-white">{{ newspaper.title }}</h3>
         <div class="flex items-center text-gray-400 text-sm mb-3">
-          <span class="mr-4">By {{ newspaper.publishers.all|join:", " }}</span>
+          <span class="mr-4">By
+            {% for publisher in newspaper.publishers.all %}
+              <a href="{% url 'agency:profile' pk=publisher.pk %}" class="text-blue-500 hover:text-blue-700 hover:underline transition-colors">{{ publisher }}</a>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+          </span>
           <span>{{ newspaper.published_date }}</span>
         </div>
         <p class="text-gray-300 mb-4">{{ newspaper.content|truncatewords:15 }}</p>

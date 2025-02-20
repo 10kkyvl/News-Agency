@@ -24,28 +24,28 @@ urlpatterns = [
         name="newspaper-detail"
     ),
     path(
-        "newspapers-create/",
+        "newspapers/create",
         NewsPaperCreateView.as_view(),
         name="newspaper-create"
     ),
     path(
-        "newspapers-edit/<int:pk>",
+        "newspapers/<int:pk>/edit",
         NewsPaperEditView.as_view(),
         name="newspaper-edit"
     ),
     path(
-        "newspapers-delete/<int:pk>",
+        "newspapers/<int:pk>/delete",
         NewsPaperDeleteView.as_view(),
         name="newspaper-delete"
     ),
-    path("topics-create", CreateTopicView.as_view(), name="topic-create"),
+    path("topics/create", CreateTopicView.as_view(), name="topic-create"),
     path(
-        "topics-update/<int:pk>",
+        "topics/<int:pk>/update",
         UpdateTopicView.as_view(),
         name="topic-update"
     ),
     path(
-        "topics-delete/<int:pk>",
+        "topics/<int:pk>/delete",
         DeleteTopicView.as_view(),
         name="topic-delete"
     ),

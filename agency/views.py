@@ -1,15 +1,14 @@
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+from django.db.models.aggregates import Count
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic.base import RedirectView
 from django.views.generic.edit import DeleteView, UpdateView
 
 from agency.forms import CustomUserCreationForm, TopicForm, ArticleForm
-from agency.models import Newspaper, Redactor
-
-from agency.models import Topic
+from agency.models import Newspaper, Redactor, Topic
 
 
 class NewsPaperListView(ListView):
@@ -17,19 +16,14 @@ class NewsPaperListView(ListView):
     model = Newspaper
     template_name = "agency/newspaper_list.html"
     context_object_name = "newspapers"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context["topics"] = Topic.objects.all()
-
-        return context
+    queryset = Newspaper.objects.prefetch_related("topic", "publishers")
 
 
 class NewsPaperDetailView(DetailView):
     model = Newspaper
     template_name = "agency/newspaper_detail.html"
     context_object_name = "newspaper"
+    queryset = Newspaper.objects.prefetch_related("topic", "publishers")
 
 
 class NewsPaperCreateView(LoginRequiredMixin, CreateView):
@@ -59,6 +53,7 @@ class NewsPaperDeleteView(LoginRequiredMixin, DeleteView):
             "agency:newspaper-detail",
             kwargs={"pk": self.object.id}
         )
+
 
 class CreateTopicView(LoginRequiredMixin, CreateView):
     model = Topic
@@ -106,9 +101,16 @@ class EditorsList(ListView):
     model = Redactor
     template_name = "agency/redactor_list.html"
     context_object_name = "editors"
+    queryset = Redactor.objects.annotate(
+        num_articles=Count("published_articles")
+    )
 
 
 class ProfileView(DetailView):
     model = Redactor
     context_object_name = "editor"
     template_name = "agency/redactor_profile.html"
+    queryset = Redactor.objects.prefetch_related(
+        "published_articles__topic",
+        "published_articles__publishers"
+    )
